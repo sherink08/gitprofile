@@ -7,6 +7,7 @@ import { RepoComponent } from './repo/repo.component';
 import { StarsComponent } from './stars/stars.component';
 import { FollowersComponent } from './followers/followers.component';
 import { FollowingComponent } from './following/following.component';
+import { ProjectComponent } from './project/project.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { FollowingComponent } from './following/following.component';
     RepoComponent,
     StarsComponent,
     FollowersComponent,
-    FollowingComponent
+    FollowingComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,

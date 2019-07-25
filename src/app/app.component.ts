@@ -13,7 +13,6 @@ export class AppComponent  {
   constructor(private api: GitApiService) { }
   ngOnInit() {
     this.api.getUserDetails(this.userName).subscribe(data=>{
-      console.log(data);
       this.user = data;
      // this.api.getUserDetails(this.user.)
     });

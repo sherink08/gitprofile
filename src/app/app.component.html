@@ -150,7 +150,7 @@
 
           <div class="w-100 mx-3 mt-3 hide" id="profile-scroll">
               <img class="avatar" height="32" width="32" alt="@subhaminion" src="https://avatars1.githubusercontent.com/u/13986359?s=180&amp;v=4">
-              <span>subhaminion</span>
+              <span>{{user.login}}</span>
           </div>
 
           <div class="mb-3 py-3">
@@ -194,13 +194,13 @@
           </nav>
           <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
             <div height="500px" *ngIf="menu==1"  class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-              Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat ex.
+              Overview
             </div>
             <div class="tab-pane fade" *ngIf="menu==2"  id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
               <app-repo [user]="user"></app-repo>
             </div>
             <div class="tab-pane fade" *ngIf="menu==3" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-              
+              <app-project [user]="user"></app-project>
             </div>
             <div class="tab-pane fade" *ngIf="menu==4" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
               <app-stars></app-stars>

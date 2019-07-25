@@ -115,8 +115,9 @@ body{
     font-size: 14px;
     line-height: 20px;
     min-height: 28px;
-    padding-bottom: 3px;
-    padding-top: 3px;
+    width: 87%;
+    height: auto;
+    padding: 5px 8px !important;
   }
   .suggestion{
     display: none;
@@ -242,14 +243,25 @@ body{
   .tab-details li a:hover{
     text-decoration: underline;
   }
-  .tab-details li div > span{
+  .tab-details li div div > span{
     margin-bottom: 8px !important;
     display: block;
   }
 
-  .tab-details li div div > span{
+  .tab-details li div div div > span{
     margin-right: 16px !important;
     display: inline-block;
+    fill: #586069;
+  }
+
+  .tab-details li div div div > span:hover{
+    color: #0366d6 !important;
+    fill: #0366d6 !important;
+    cursor: pointer;
+  }
+
+  .tab-details li div div div > span svg{
+    vertical-align: sub;
   }
 
   .tab-details li .badge{

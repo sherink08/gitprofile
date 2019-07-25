@@ -1,13 +1,15 @@
 <ul class="tab-details">
-    <li class="row" *ngFor="let item of following">
-        <div class="d-table-cell col-2 col-md-1 col-lg-1 col-xl-1 v-align-top">    
-            <a href="{{item.html_url}}"><img class="avatar" height="50" width="50" src="{{item.avatar_url}}"/></a>
-        </div>
-        <div class="d-table-cell col-8 col-md-9 col-lg-9 col-xl-9 v-align-top pr-3">
-            <span>{{item.login}}</span>
-        </div> 
-        <div class="d-table-cell col-2 v-align-top text-right">
-            <button class="btn btn-sm">Follow</button>
-        </div>  
+    <li *ngFor="let item of following">
+        <div class="row">     
+            <div class="d-table-cell col-2 col-md-1 col-lg-1 col-xl-1 v-align-top">    
+                <a href="{{item.html_url}}"><img class="avatar" height="50" width="50" src="{{item.avatar_url}}"/></a>
+            </div>
+            <div class="d-table-cell col-8 col-md-9 col-lg-9 col-xl-9 v-align-top pr-3">
+                <span>{{item.login}}</span>
+            </div> 
+            <div class="d-table-cell col-2 v-align-top text-right">
+                <button class="btn btn-sm">Follow</button>
+            </div>  
+        </div>    
     </li>
 </ul>
