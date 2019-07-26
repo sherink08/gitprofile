@@ -13,7 +13,7 @@ export class StarsComponent implements OnInit {
 
   constructor(private api: GitApiService) { }
   ngOnInit() {
-    this.api.getUserData('https://api.github.com/users/subhaminion/starred').subscribe(d=>{
+    this.api.getUserData('https://api.github.com/users/'+ this.user.login +'/starred').subscribe(d=>{
       this.starsDetails = d;
     });
   }

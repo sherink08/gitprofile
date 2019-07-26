@@ -149,7 +149,7 @@
           </div>
 
           <div class="w-100 mx-3 mt-3 hide" id="profile-scroll">
-              <img class="avatar" height="32" width="32" alt="@subhaminion" src="https://avatars1.githubusercontent.com/u/13986359?s=180&amp;v=4">
+              <img class="avatar mr-2" height="32" width="32" alt="@subhaminion" src="https://avatars1.githubusercontent.com/u/13986359?s=180&amp;v=4">
               <span>{{user.login}}</span>
           </div>
 
@@ -182,7 +182,7 @@
 
         <!-- Tabs -->
         <div class="tabs">
-          <nav id="tab01">
+          <nav id="contentTab">
             <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
               <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" (click)="changeMenu(1)" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Overview</a>
               <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" (click)="changeMenu(2)" href="#nav-profile" role="tab" aria-controls="nav-profile"  aria-selected="false">Repositories<span class="badge badge-secondary">{{user.public_repos}}</span></a>
@@ -194,7 +194,65 @@
           </nav>
           <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
             <div height="500px" *ngIf="menu==1"  class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-              Overview
+              <span>Pinned</span>
+              <ul class="tab-details-pinned">
+                <li class="mb-3 border">
+                  <div class="row">  
+                    <div class="col-6 col-lg-6 d-inline-block">
+                      <span><h5><a href="">Mark-Down-Editor-Node</a></h5></span>
+                      <span>Real Time mark down editor</span>
+                      <div>
+                        <span>
+                            <i class="badge" style="background-color: #3572A5"></i>
+                            Javscript
+                        </span>
+                      </div>  
+                    </div>
+                  </div>    
+                </li>
+                <li class="mb-3 border">
+                  <div class="row">  
+                    <div class="col-6 col-lg-6 d-inline-block">
+                      <span><h5><a href="">Mark-Down-Editor-Node</a></h5></span>
+                      <span>Real Time mark down editor</span>
+                      <div>
+                        <span>
+                            <i class="badge" style="background-color: #3572A5"></i>
+                            Javscript
+                        </span>
+                      </div>  
+                    </div>
+                  </div>    
+                </li>
+                <li class="mb-3 border">
+                    <div class="row">  
+                      <div class="col-6 col-lg-6 d-inline-block">
+                        <span><h5><a href="">Mark-Down-Editor-Node</a></h5></span>
+                        <span>Real Time mark down editor</span>
+                        <div>
+                          <span>
+                              <i class="badge" style="background-color: #3572A5"></i>
+                              Javscript
+                          </span>
+                        </div>  
+                      </div>
+                    </div>    
+                  </li>
+                  <li class="mb-3 border">
+                    <div class="row">  
+                      <div class="col-6 col-lg-6 d-inline-block">
+                        <span><h5><a href="">Mark-Down-Editor-Node</a></h5></span>
+                        <span>Real Time mark down editor</span>
+                        <div>
+                          <span>
+                              <i class="badge" style="background-color: #3572A5"></i>
+                              Javscript
+                          </span>
+                        </div>  
+                      </div>
+                    </div>    
+                  </li>
+              </ul>
             </div>
             <div class="tab-pane fade" *ngIf="menu==2"  id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
               <app-repo [user]="user"></app-repo>
@@ -203,13 +261,13 @@
               <app-project [user]="user"></app-project>
             </div>
             <div class="tab-pane fade" *ngIf="menu==4" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
-              <app-stars></app-stars>
+              <app-stars [user]="user"></app-stars>
             </div>
             <div class="tab-pane fade" *ngIf="menu==5" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
               <app-followers [user]="user"></app-followers>
             </div>
             <div class="tab-pane fade" *ngIf="menu==6" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
-              <app-following></app-following>
+              <app-following [user]="user"></app-following>
             </div>
           </div>
         </div>
@@ -219,45 +277,4 @@
 
     </div>
   </body>
-
-  <script>
-
-    window.onscroll = function() {
-      TabScrollFunction();
-      ProfileScrollFunction();
-    };
-
-    let sticky = $("#tab01").offset().top;
-    function TabScrollFunction() {
-      if (window.pageYOffset >= sticky) {
-        $("#tab01").addClass("sticky");
-      } else {
-        $("#tab01").removeClass("sticky");
-      }
-    }
-
-    let sticky1 = $("#profile-scroll-control").offset().top;
-    function ProfileScrollFunction(){
-      if (window.pageYOffset >= sticky1) {
-        $("#profile-scroll").removeClass("hide");
-        $("#profile-scroll").addClass("sticky");
-      } else {
-        $("#profile-scroll").addClass("hide");
-        $("#profile-scroll").removeClass("sticky");
-      }
-    }
-
-    $(document).on("click","", function (event) {
-      if($(event.target).hasClass('search-controls')){
-        $(".suggestion").show();
-        $(".search").addClass("active");
-        $(".suggestion").addClass("active");
-      }
-      else{
-        $(".suggestion").hide();
-        $(".search").removeClass("active");
-        $(".suggestion").removeClass("active");
-      }
-    });
-  </script>
 </html>

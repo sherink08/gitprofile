@@ -13,7 +13,7 @@ export class FollowingComponent implements OnInit {
 
   constructor(private api: GitApiService) { }
   ngOnInit() {
-    this.api.getUserData('https://api.github.com/users/subhaminion/following').subscribe(d=>{
+    this.api.getUserData('https://api.github.com/users/'+ this.user.login +'/following').subscribe(d=>{
       this.following = d;
     });
   }

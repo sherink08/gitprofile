@@ -115,12 +115,14 @@ body{
     font-size: 14px;
     line-height: 20px;
     min-height: 28px;
-    width: 87%;
+    width: 264px;
     height: auto;
     padding: 5px 8px !important;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
   }
   .suggestion{
-    display: none;
+    visibility: hidden;
     width: 300px;
     position: absolute;
     background: #fff;
@@ -160,6 +162,14 @@ body{
     background-color: white;
     width: 470px;
   }
+
+  .suggestion.active {
+    visibility: visible;
+  }
+  .search.active .input-sm{
+    width: 435px;
+  }
+  
   .search.active{
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
@@ -272,7 +282,19 @@ body{
     top: 1px;
     width: 12px;
   }
-
+  .tab-details-pinned li{
+    border-radius: 3px;
+    list-style: none;
+    float: left;
+    width: 49%;
+    margin-left: 1%;
+  }
+  .tab-details-pinned li:nth-child(odd){
+    
+  }
+  .tab-details-pinned li:nth-child(even){
+    
+  }
   /* Tabs End */
   
   
@@ -307,28 +329,40 @@ body{
     .tabs .badge-secondary{
       display: none;
     }
+    .tab-details-pinned li{
+      border-radius: 3px;
+      list-style: none;
+      float: left;
+      width: 100%;
+      margin-left: 0;
+    }
+
     .sticky {
       width: 100%;
+      left: 0px;
+      padding-left: 14px;
     }
   
     .search{
       width: 100% !important;
-      display: -webkit-box
+      display: -webkit-box;
     }
     .search .input-sm {
       width: 90% !important;
     }
     .search img{
       float: none !important;
-      margin-bottom: 4px;
+      margin-top: 2px;
     }
     .suggestion {
-      width: 91.7% !important;
-      top: 77px;
+      width: 91% !important;
+      top: 85px;
+      left: 16px;
     }
   
     #profile-scroll{
       padding-left: 14px !important;
     }
+    
   }
   
