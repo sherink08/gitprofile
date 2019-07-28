@@ -15,12 +15,12 @@ export class RepoComponent implements OnInit {
   perPage:number;
 
   constructor(private api: GitApiService) { }
-  
+
   ngOnInit() {
     this.perPage = this.api.pageCount;
     this.getRepoData(1);
   }
-  
+
   getRepoData(val)
   {
     this.api.pageNumber +=val;
@@ -30,7 +30,7 @@ export class RepoComponent implements OnInit {
       window.scrollTo(0, 0);
     });
   }
-  
+
   getDate(dat){
     dat = new Date(dat);
     if(dat.getMonth() == new Date().getMonth() && dat.getFullYear() == new Date().getFullYear() && dat.getDate() == new Date().getDate())

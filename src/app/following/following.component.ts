@@ -10,17 +10,28 @@ export class FollowingComponent implements OnInit {
 
   @Input() user: any;
   following: any;
+  pageNumber:number=0;
+  perPage:number;
 
   constructor(private api: GitApiService) { }
+
   ngOnInit() {
+    this.perPage = this.api.pageCount;
+    this.getUserData(1);
+  }
+
+  getUserData(val){
+    debugger;
+    this.api.pageNumber +=val;
+    this.pageNumber=this.api.pageNumber;
     this.api.getUserData('https://api.github.com/users/'+ this.user.login +'/following').subscribe(d=>{
       this.following = d;
-      this.api.pageCount =this.following.length+1;
-      this.following.forEach(item => {
-        this.api.getUserDetails(item.login).subscribe(data=>{
-          item.userData = data;
-        });
-      });
+      //this.api.pageCount =this.following.length+1;
+      //this.following.forEach(item => {
+        // this.api.getUserDetails(item.login).subscribe(data=>{
+        //   item.userData = data;
+        // });
+      //});
     });
   }
 }
