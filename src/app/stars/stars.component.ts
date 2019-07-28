@@ -9,13 +9,49 @@ import {GitApiService} from '../Services/git-api.service';
 export class StarsComponent implements OnInit {
 
   @Input() user: any;
-  starsDetails: any;
+  starsDetails:any= [];
+  pageNumber :number=0;
+  perPage :number=0;
+  curPage:number;
+  masterData:any=[];
+  prevDisabled :boolean=true;
+  nextDisabled:boolean=true;
 
   constructor(private api: GitApiService) { }
+  
   ngOnInit() {
-    this.api.getUserData('https://api.github.com/users/'+ this.user.login +'/starred').subscribe(d=>{
-      this.starsDetails = d;
-    });
+    this.pageNumber = 0;
+    this.perPage = this.api.pageCount;
+    this.curPage =1;
+    this.setStarDetails(1);
+  }
+  
+  setStarDetails(val)
+  {
+    this.starsDetails=[];
+    this.pageNumber+=val;
+    for(var i=((this.pageNumber-1)*this.perPage);i<(this.perPage*this.pageNumber);i++)
+    {
+      if(i>=this.user.starred.length)
+        break;
+      this.starsDetails.push(this.user.starred[i]);
+    }
+    if(this.starsDetails.length != this.perPage || (this.starsDetails.length == this.perPage && i>this.user.starred.length ))
+    {
+      this.nextDisabled=true;
+      this.prevDisabled=false;
+    }
+    else if(i<=this.perPage)
+    {
+      this.prevDisabled =true;
+      this.nextDisabled =false;
+    }
+    else
+    {
+      this.prevDisabled =true;
+      this.nextDisabled =true;
+    }
+    window.scrollTo(0, 0);
   }
 
   getDate(dat){

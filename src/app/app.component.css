@@ -10,6 +10,9 @@ body{
     color: #0366d6;
     text-decoration: none;
   }
+  .text-bold{
+    font-weight: 500 !important;
+  }
   .bg-dark {
     background-color: #24292E !important;
   }
@@ -204,6 +207,57 @@ body{
     display: none;
   }
   
+  .year-btn button{
+    margin-top: 10px;
+    border-radius: 3px !important;
+    font-size: 12px;
+    padding: 8px 10px;
+    background-image: none !important;
+    background-color: transparent !important;
+    color: #586069 !important;
+    text-align: left;
+    border: 0;
+  }
+
+  .year-btn button.active{
+    background-color: #0366d6 !important;
+    color: #fff !important;
+  }
+
+  .yearly-contributions > div:first-child{
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    padding: 16px !important;
+  }
+  .yearly-contributions > div:last-child{
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    padding: 16px !important;
+  }
+
+  .yearly-contributions button{
+    border-radius: 3px !important;
+    font-size: 12px;
+    padding: 4px 8px;
+    background-color: transparent !important;
+    color: #586069 !important;
+  }
+  .yearly-contributions a:hover{
+    text-decoration: underline;
+  }
+
+  .yearly-contributions .activity-overview-axis, .activity-overview-point {
+    stroke: #6cb267;
+  }
+  .yearly-contributions .activity-overview-percentage {
+    fill: #959da5;
+    font-size: 10px;
+  }
+  .yearly-contributions .activity-overview-label {
+    fill: #586069;
+    font-size: 12px;
+  }
+
   /* Tabs */
   nav .nav-tabs{
     padding-right: 25%;
@@ -219,7 +273,7 @@ body{
     text-align: center;
   }
   .tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-    color: #000;
+    color: #000 !important;
     border-bottom: 2px solid #e36209 !important;
     font-weight: 600;
   }
@@ -258,6 +312,9 @@ body{
     display: block;
   }
 
+  .tab-details li div div div:last-child{
+    font-size: 12px;
+  }
   .tab-details li div div div > span{
     margin-right: 16px !important;
     display: inline-block;
@@ -274,30 +331,67 @@ body{
     vertical-align: sub;
   }
 
-  .tab-details li .badge{
+  .tab-details li .badge, .tab-details-pinned li .badge{
     border-radius: 50%;
     display: inline-block;
     height: 12px;
     position: relative;
     top: 1px;
     width: 12px;
+    margin-right: 4px;
+  }
+
+  .tab-details-pinned{
+    padding: 0px !important;
+    font-size: 14px !important;
   }
   .tab-details-pinned li{
+    display: flex !important;
     border-radius: 3px;
     list-style: none;
     float: left;
     width: 49%;
-    margin-left: 1%;
+    box-sizing: border-box;
+  }
+  .tab-details-pinned li > div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 16px;
+  }
+
+  .tab-details-pinned div > li > div span:first-child{
+    font-weight: 600;
+  }
+  .tab-details-pinned div > li p{
+    font-size: 12px !important;
+    flex: 1 0 auto;
+    word-wrap: break-word;
+  }
+  .tab-details-pinned div > li > div span{
+    color: #586069 !important;
+    flex: 0 1 auto;
   }
   .tab-details-pinned li:nth-child(odd){
-    
+    margin-right: 2%;
   }
-  .tab-details-pinned li:nth-child(even){
-    
+  .tab-details-pinned li > div{
+    display: flex !important;
+    flex-direction: column;
+    width: 100%;
   }
   /* Tabs End */
   
-  
+  /* Footer style starts here */
+  footer{
+    padding: 16px!important;
+    width: 100%!important;
+  }
+  footer ul{
+    list-style: none;
+  }
+  /* Footer style ends here */
+
   /* Mobile */
   @media (max-width:767px){
     .container-fluid{
@@ -364,5 +458,29 @@ body{
       padding-left: 14px !important;
     }
     
+    .tab-details-pinned div{
+      display: block !important;
+    }
+    .tab-details-pinned li{
+      display: flex !important;
+      float: none !important;
+      width: 100% !important;
+    }
+    .tab-details-pinned li:nth-child(odd){
+      margin-right: 0;
+    }
   }
+
+/* Medium devices (tablets, less than 992px)  */
+@media (max-width: 991.98px) {
+  .tabs nav{
+    overflow-x: auto;
+  }
+  .nav{
+    display: -webkit-inline-box;
+  }
+  nav .nav-tabs {
+    padding-right: 0;
+  }
+}
   

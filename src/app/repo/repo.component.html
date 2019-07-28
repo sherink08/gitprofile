@@ -31,3 +31,8 @@
     </div>    
   </li>
 </ul>
+
+<div class="btn-group-horizontal text-center">
+  <button type="button" (click)="getRepoData(-1)" [disabled]="pageNumber<=1" class="btn">Previous</button>
+  <button type="button" (click)="getRepoData(1)" [disabled]="perPage!=repos.length" class="btn active">Next</button>
+</div>

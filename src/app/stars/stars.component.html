@@ -34,3 +34,7 @@
     </div>     
     </li>
 </ul>
+<div class="btn-group-horizontal text-center">
+    <button type="button" (click)="setStarDetails(-1)" [disabled]="prevDisabled" class="btn">Previous</button>
+    <button type="button" (click)="setStarDetails(1)" [disabled]="nextDisabled" class="btn">Next</button>
+  </div>

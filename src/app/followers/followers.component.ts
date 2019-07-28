@@ -16,6 +16,8 @@ export class FollowersComponent implements OnInit {
     this.api.getUserData(this.user.followers_url).subscribe(d=>{
       this.followers = d;
     });
+
+    
   }
 
 }

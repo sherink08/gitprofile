@@ -15,6 +15,12 @@ export class FollowingComponent implements OnInit {
   ngOnInit() {
     this.api.getUserData('https://api.github.com/users/'+ this.user.login +'/following').subscribe(d=>{
       this.following = d;
+      this.api.pageCount =this.following.length+1;
+      this.following.forEach(item => {
+        this.api.getUserDetails(item.login).subscribe(data=>{
+          item.userData = data;
+        });
+      });
     });
   }
 }
