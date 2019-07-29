@@ -26,12 +26,12 @@ export class FollowersComponent implements OnInit {
     this.api.getUserData(this.user.followers_url).subscribe(d=>{
       this.followers = d;
       //this.api.pageCount =this.followers.length+1;
-      // this.followers.forEach(item => {
-      //   this.api.getUserDetails(item.login).subscribe(data=>{
-      //     item.userData = data;
-      //     window.scrollTo(0,0);
-      //    });
-      //  });
+      this.followers.forEach(item => {
+        this.api.getUserDetails(item.login).subscribe(data=>{
+          item.userData = data;
+          window.scrollTo(0,0);
+         });
+       });
     });
   }
 }
