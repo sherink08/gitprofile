@@ -24,14 +24,14 @@ export class FollowingComponent implements OnInit {
     this.api.pageNumber +=val;
     this.pageNumber=this.api.pageNumber;
     this.api.getUserData('https://api.github.com/users/'+ this.user.login +'/following').subscribe(d=>{
-      debugger;
       this.following = d;
       //this.api.pageCount =this.following.length+1;
-      //this.following.forEach(item => {
-        // this.api.getUserDetails(item.login).subscribe(data=>{
-        //   item.userData = data;
-        // });
-      //});
+      // this.following.forEach(item => {
+      //   this.api.getUserDetails(item.login).subscribe(data=>{
+      //     item.userData = data;
+      //     window.scrollTo(0,0);
+      //   });
+      // });
     });
   }
 }
