@@ -9,7 +9,7 @@ import {GitApiService} from '../Services/git-api.service';
 export class FollowingComponent implements OnInit {
 
   @Input() user: any;
-  following: any;
+  following: any=[];
   pageNumber:number=0;
   perPage:number;
 
@@ -21,10 +21,10 @@ export class FollowingComponent implements OnInit {
   }
 
   getUserData(val){
-    debugger;
     this.api.pageNumber +=val;
     this.pageNumber=this.api.pageNumber;
     this.api.getUserData('https://api.github.com/users/'+ this.user.login +'/following').subscribe(d=>{
+      debugger;
       this.following = d;
       //this.api.pageCount =this.following.length+1;
       //this.following.forEach(item => {

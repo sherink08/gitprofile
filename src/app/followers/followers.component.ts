@@ -9,7 +9,7 @@ import {GitApiService} from '../Services/git-api.service';
 export class FollowersComponent implements OnInit {
 
   @Input() user: any;
-  followers: any;
+  followers: any = [];
   pageNumber:number=0;
   perPage:number;
 

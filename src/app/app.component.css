@@ -187,6 +187,15 @@ body{
     z-index: 1020;
   }
 
+  #year-list-container.sticky{
+    top: 74px !important;
+    width: auto !important;
+    right: 30px;
+  }
+  #year-list-container.sticky button{
+    padding-right : 76px;
+  }
+
   #profile-scroll{
     background-color: #fff;
     font-weight: 600;
@@ -382,13 +391,56 @@ body{
   }
   /* Tabs End */
 
+  .calendar-graph{
+    color: #767676;
+    fill: #767676;
+    font-size: 10px;
+  }
+
+  .legend {
+    bottom: -1px;
+    display: inline-block;
+    list-style: none;
+    margin: 0 5px;
+    position: relative;
+  }
+  .legend li {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+  }
+
   /* Footer style starts here */
   footer{
     padding: 16px!important;
     width: 100%!important;
+    color: #586069 !important;
+    font-size: 12px!important;
   }
   footer ul{
     list-style: none;
+    justify-content: space-around !important;
+  }
+  footer a:hover{
+    text-decoration: underline;
+  }
+  footer svg{
+    fill: #c6cbd1 !important;
+  }
+  footer svg:hover{
+    fill: #959da5 !important;
+  }
+  footer div > div.border-top{
+    margin-left:12% !important;
+    margin-right:12% !important;
+  }
+  footer div > div.border-top > div{
+    width: 44% !important;
+    text-align: center;
+  }
+  footer div > div.border-top a{
+    width: 12% !important;
+    text-align: center;
   }
   /* Footer style ends here */
 
@@ -469,6 +521,15 @@ body{
     .tab-details-pinned li:nth-child(odd){
       margin-right: 0;
     }
+    
+    footer div > div.border-top{
+      margin: 0!important;
+    }
+    footer div > div.border-top > div{
+      width: 100% !important;
+      text-align: center;
+    }
+
   }
 
 /* Medium devices (tablets, less than 992px)  */
@@ -482,4 +543,13 @@ body{
   nav .nav-tabs {
     padding-right: 0;
   }
+
+  footer div > div.border-top{
+    margin: 0!important;
+  }
+  footer div > div.border-top > div{
+    width: 100% !important;
+    text-align: center;
+  }
+
 }
